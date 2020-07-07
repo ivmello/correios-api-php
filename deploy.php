@@ -4,7 +4,7 @@ namespace Deployer;
 require 'recipe/common.php';
 
 // Project name
-set('application', 'my_project');
+set('application', 'correios-api-php');
 
 // Project repository
 set('repository', 'https://github.com/ivmello/correios-api-php.git');
@@ -21,10 +21,10 @@ set('writable_dirs', []);
 
 
 // Hosts
-
-host('project.com')
-    ->set('deploy_path', '~/{{application}}');    
-    
+host('178.128.159.237')
+    ->user('root')
+    ->identityFile('~/.ssh/id_rsa')
+    ->set('deploy_path', '/var/www/correios');
 
 // Tasks
 
